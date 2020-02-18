@@ -1,7 +1,7 @@
 # DDoS
 
 DDoS or DoS, the definition depends if you use it alone or with several computers on different networks.<br>
-Written in ***cmd*** or ***batch***, made when i was 13 but improved from time to time ever since.<br>
+Written in ***cmd*** or ***batch***, made when I was 13 but improved over time since.<br>
 
 <p align="center"><br>
   Github encoding is destroying symbols in the program<br>
