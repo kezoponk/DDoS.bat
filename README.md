@@ -1,4 +1,4 @@
-# DDoS
+# DDoS.bat
 
 DDoS or DoS, the definition depends if you use it alone or with several computers on different networks.<br>
 Written in ***cmd*** or ***batch***, made when I was 13 but improved over time since.<br>
