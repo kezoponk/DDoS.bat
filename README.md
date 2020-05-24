@@ -8,4 +8,4 @@ Written in ***cmd*** or ***batch***, made when I was 13 but improved over time s
 </p>
 <img src="https://i.ibb.co/ZMp5Vqp/Ska-rmavbild-2020-01-23-kl-20-49-56.png">
 
-<center > As you can see, detailed explanations is in the program so don't be worried because of the short github readme</center>
+<p align="center"> As you can see, detailed explanations is in the program so don't be worried because of the short github readme</p>
