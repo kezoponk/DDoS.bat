@@ -1,7 +1,7 @@
 # DDoS.bat
 
 DDoS or DoS, the definition depends if you use it alone or with several computers on different networks.<br>
-Written in ***cmd*** or ***batch***, made when I was 13 but improved over time since.<br>
+Written in **cmd**, made when I was 13 but improved over time since.<br>
 
 <p align="center"><br>
   <code><a href="https://www.mediafire.com/file/c71mmk2kppz1njr/DDoS_3.4.zip/file">Download zip here </a></code>
